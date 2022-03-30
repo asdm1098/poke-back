@@ -1,11 +1,13 @@
+import { HttpModule } from '@nestjs/axios';
 import { Test, TestingModule } from '@nestjs/testing';
-import { PokemonsService } from './pokemons.service';
+import { PokemonsService } from '../pokemons.service';
 
 describe('PokemonsService', () => {
   let service: PokemonsService;
 
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
+      imports: [HttpModule],
       providers: [PokemonsService],
     }).compile();
 
