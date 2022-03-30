@@ -35,7 +35,7 @@ export class PokemonsService {
     const pokemon: Pokemon = {
       id: data.id,
       name: data.name,
-      type: data.types[0].type.name,
+      types: data.types.map((tp) => tp.type.name),
       urlImg: data?.sprites?.front_default,
     };
 
